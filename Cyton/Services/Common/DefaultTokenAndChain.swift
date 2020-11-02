@@ -19,7 +19,7 @@ class DefaultTokenAndChain {
             }
             self.ethereum(wallet: walletModel)
             self.testChain(chainHost: CITANetwork.defaultNode, wallet: walletModel)
-            self.testChain(chainHost: "http://testnet.taidihub.com", wallet: walletModel)
+            self.testChain(chainHost: "https://testnet.taidihub.com", wallet: walletModel)
         }
     }
 

@@ -11,10 +11,10 @@ import CITA
 import Alamofire
 
 struct CITANetwork {
-    static let defaultNode = "http://testnet.taidihub.com"
+    static let defaultNode = "https://testnet.taidihub.com"
 
     func host() -> URL {
-        return URL(string: "https://taidi.ethgeek.cn:8888")!
+        return URL(string: "https://scan.taidihub.com:8888")!
     }
 
     let cita: CITA

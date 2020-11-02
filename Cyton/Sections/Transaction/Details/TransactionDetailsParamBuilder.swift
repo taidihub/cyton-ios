@@ -39,7 +39,7 @@ class TransactionDetailsParamBuilder {
             status = tx.isContractCreation ? "Transaction.Details.contractCreationSuccess".localized() : "TransactionStatus.success".localized()
             if tx.token.type == .cita || tx.token.type == .citaErc20 {
                 if tx.token.chainId == "1" || tx.token.chainId == "0x1" {
-                    txDetailsUrl = URL(string: "https://scan.taiditech.com/#/transaction/\(tx.hash)")!
+                    txDetailsUrl = URL(string: "https://scan.taidihub.com/#/transaction/\(tx.hash)")!
                 }
             } else {
                 txDetailsUrl = EthereumNetwork().host().appendingPathComponent("/tx/\(tx.hash)")
