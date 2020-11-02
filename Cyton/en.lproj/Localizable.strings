@@ -120,7 +120,7 @@
 // Wallet
 // ---------------------------------------------------------
 "Wallet" = "Wallet";
-"Wallet.token" = "Token";
+"Wallet.token" = "Assets";
 "Wallet.addToken" = "Add";
 "Wallet.transaction" = "Send";
 "Wallet.receipt" = "Receive";
@@ -130,7 +130,7 @@
 
 // Wallet QRCode
 // ---------------------------------------------------------
-"Wallet.QRCode.desc" = "Please do not deposit any digital assets other than ETH and CITA to above address";
+"Wallet.QRCode.desc" = "Please do not deposit any digital assets other than BST to above address";
 "Wallet.QRCode.copy" = "Copy";
 "Wallet.QRCode.copySuccess" = "Address is copied to clipboard";
 

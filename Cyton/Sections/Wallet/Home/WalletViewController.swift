@@ -42,14 +42,14 @@ class WalletViewController: UIViewController {
         presenter.refresh()
 
         // observe wallet count
-        let realm = try! Realm()
-        walletCountObserve = realm.objects(WalletModel.self).observe { [weak self](_) in
-            if realm.objects(WalletModel.self).count > 1 {
-                self?.navigationItem.rightBarButtonItem = self?.switchWalletBarButton
-            } else {
-                self?.navigationItem.rightBarButtonItem = self?.addWalletBarButton
-            }
-        }
+//        let realm = try! Realm()
+//        walletCountObserve = realm.objects(WalletModel.self).observe { [weak self](_) in
+//            if realm.objects(WalletModel.self).count > 1 {
+//                self?.navigationItem.rightBarButtonItem = self?.switchWalletBarButton
+//            } else {
+//                self?.navigationItem.rightBarButtonItem = self?.addWalletBarButton
+//            }
+//        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
