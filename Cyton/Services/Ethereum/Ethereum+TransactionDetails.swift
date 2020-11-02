@@ -119,7 +119,7 @@ extension EthereumNetwork {
             "offset": pageSize
         ]
         return try Promise<[EthereumTransactionDetails]>.init { (resolver) in
-            Alamofire.request(url, method: .get, parameters: parameters).responseJSON { (response) in
+            AF.request(url, method: .get, parameters: parameters).responseJSON { (response) in
                 do {
                     guard let responseData = response.data else { throw TransactionHistoryError.networkFailure }
                     let response = try JSONDecoder().decode(EthereumTransactionsResponse.self, from: responseData)
@@ -145,7 +145,7 @@ extension EthereumNetwork {
             "offset": pageSize
         ]
         return try Promise<[EthereumTransactionDetails]>.init { (resolver) in
-            Alamofire.request(url, method: .get, parameters: parameters).responseJSON { (response) in
+            AF.request(url, method: .get, parameters: parameters).responseJSON { (response) in
                 do {
                     guard let responseData = response.data else { throw TransactionHistoryError.networkFailure }
                     let response = try JSONDecoder().decode(EthereumTransactionsResponse.self, from: responseData)
@@ -167,7 +167,7 @@ extension EthereumNetwork {
             "txhash": txhash
         ]
         return try Promise<EthereumTransactionDetails>.init { (resolver) in
-            Alamofire.request(url, method: .get, parameters: parameters).responseJSON { (response) in
+            AF.request(url, method: .get, parameters: parameters).responseJSON { (response) in
                 do {
                     guard let responseData = response.data else { throw TransactionHistoryError.networkFailure }
                     let response = try JSONDecoder().decode(EthereumTransactionsResponse.self, from: responseData)

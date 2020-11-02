@@ -14,7 +14,7 @@ struct NFTService {
     func getErc721Data(with address: String) throws -> NFTModel {
         let url = ServerApi.openseaURL + address
         return try Promise<NFTModel>.init { (resolver) in
-            Alamofire.request(url, method: .get).responseJSON { (response) in
+            AF.request(url, method: .get).responseJSON { (response) in
                 if response.error == nil {
                     let nftModel = try! JSONDecoder().decode(NFTModel.self, from: response.data!)
                     resolver.fulfill(nftModel)

@@ -81,7 +81,7 @@ extension CITANetwork {
             "perPage": pageSize
         ]
         return try Promise<[CITATransactionDetails]>.init { (resolver) in
-            Alamofire.request(url, method: .get, parameters: parameters).responseJSON { (response) in
+            AF.request(url, method: .get, parameters: parameters).responseJSON { (response) in
                 do {
                     guard let responseData = response.data else { throw TransactionHistoryError.networkFailure }
                     let response = try JSONDecoder().decode(CITATransactionsResponse.self, from: responseData)
@@ -103,7 +103,7 @@ extension CITANetwork {
             "perPage": pageSize
         ]
         return try Promise<[CITATransactionDetails]>.init { (resolver) in
-            Alamofire.request(url, method: .get, parameters: parameters).responseJSON { (response) in
+            AF.request(url, method: .get, parameters: parameters).responseJSON { (response) in
                 do {
                     guard let responseData = response.data else { throw TransactionHistoryError.networkFailure }
                     let response = try JSONDecoder().decode(CITAErc20TransactionsResponse.self, from: responseData)
@@ -119,7 +119,7 @@ extension CITANetwork {
     func getTransaction(txhash: String) throws -> CITATransactionDetails {
         let url = host().appendingPathComponent("/api/transactions/\(txhash)")
         return try Promise<CITATransactionDetails>.init { (resolver) in
-            Alamofire.request(url, method: .get, parameters: nil).responseData(completionHandler: { (response) in
+            AF.request(url, method: .get, parameters: nil).responseData(completionHandler: { (response) in
                 do {
                     guard let responseData = response.data else { throw TransactionHistoryError.networkFailure }
                     let response = try JSONDecoder().decode(CITATransactionResponse.self, from: responseData)

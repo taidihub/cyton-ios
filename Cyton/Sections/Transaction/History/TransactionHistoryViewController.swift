@@ -108,7 +108,7 @@ class TransactionHistoryViewController: UIViewController, UITableViewDelegate, U
     }
 
     private func setupTokenProfile(tokenIcon: String?, overview: String?, price: Double?) {
-        guard var tokenIcon = tokenIcon, let overview = overview else {
+        guard let tokenIcon = tokenIcon, let overview = overview else {
             overlay.frame = CGRect(x: 0, y: 0, width: view.bounds.size.width, height: tableView.bounds.size.height)
             tokenProfleView.frame = CGRect(x: 0, y: 0, width: view.bounds.size.width, height: 1)
             tokenProfleView.isHidden = true

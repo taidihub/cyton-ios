@@ -19,7 +19,7 @@ class DefaultTokenAndChain {
             }
             self.ethereum(wallet: walletModel)
             self.testChain(chainHost: CITANetwork.defaultNode, wallet: walletModel)
-            self.testChain(chainHost: "http://testnet.mba.cmbchina.biz:1337", wallet: walletModel)
+            self.testChain(chainHost: "http://testnet.taidihub.com", wallet: walletModel)
         }
     }
 
@@ -37,7 +37,7 @@ class DefaultTokenAndChain {
 
         let realm = try! Realm()
         try? realm.write {
-            realm.add(ethModel, update: true)
+            realm.add(ethModel, update: .modified)
             if !wallet.tokenModelList.contains(where: { $0 == ethModel }) {
                 wallet.tokenModelList.append(ethModel)
                 if !wallet.selectedTokenList.contains(where: { $0 == ethModel }) {
@@ -71,8 +71,9 @@ class DefaultTokenAndChain {
 
             let realm = try Realm()
             try realm.write {
-                realm.add(tokenModel, update: true)
-                realm.add(chainModel, update: true)
+                
+                realm.add(tokenModel, update: .modified)
+                realm.add(chainModel, update: .modified)
                 if !wallet.chainModelList.contains(where: { $0 == chainModel }) {
                     wallet.chainModelList.append(chainModel)
                 }

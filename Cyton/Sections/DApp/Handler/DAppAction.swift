@@ -30,11 +30,11 @@ struct DAppAction {
             dappModel.iconUrl = dappLink + "/favicon.ico"
             dappModel.date = convertedDate
             try! realm.write {
-                realm.add(dappModel, update: true)
+                realm.add(dappModel, update: .modified)
                 completion(true)
             }
         } else {
-            Alamofire.request(manifestLink!, method: .get).responseJSON { (response) in
+            AF.request(manifestLink!, method: .get).responseJSON { (response) in
                 do {
                     guard let responseData = response.data else { throw Error.manifestRequestFailed }
                     let manifest = try? JSONDecoder().decode(Manifest.self, from: responseData)
@@ -52,7 +52,7 @@ struct DAppAction {
                         dappModel.date = convertedDate
                     }
                     try? realm.write {
-                        realm.add(dappModel, update: true)
+                        realm.add(dappModel, update: .modified)
                         completion(true)
                     }
                 } catch {
@@ -63,7 +63,7 @@ struct DAppAction {
     }
 
     func dealWithManifestJson(with link: String) {
-        Alamofire.request(link, method: .get).responseJSON { (response) in
+        AF.request(link, method: .get).responseJSON { (response) in
             do {
                 guard let responseData = response.data else { throw Error.manifestRequestFailed }
                 let manifest = try? JSONDecoder().decode(Manifest.self, from: responseData)
@@ -119,8 +119,8 @@ struct DAppAction {
         }
         let realm = try! Realm()
         try? realm.write {
-            realm.add(tokenModel, update: true)
-            realm.add(chainModel, update: true)
+            realm.add(tokenModel, update: .modified)
+            realm.add(chainModel, update: .modified)
             if !selectExist {
                 wallet.selectedTokenList.append(tokenModel)
             }

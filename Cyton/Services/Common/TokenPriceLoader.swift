@@ -44,7 +44,8 @@ class TokenPriceLoader {
         let currency = currency ?? LocalCurrencyService.shared.getLocalCurrencySelect().short
         let url = URL(string: "https://api.coinmarketcap.com/v2/ticker/\(tokenId)/?convert=\(currency)")!
         return try? Promise<Double>.init { (resolver) in
-            Alamofire.request(url).responseData { (response) in
+            
+            AF.request(url).responseData (completionHandler: {(response) in
                 do {
                     guard let data = response.data else { throw response.error! }
                     let response = try JSONDecoder().decode(TokenQuotesResponse.self, from: data)
@@ -54,7 +55,7 @@ class TokenPriceLoader {
                 } catch {
                     resolver.reject(error)
                 }
-            }
+            })
         }.wait()
     }
 
@@ -65,7 +66,7 @@ class TokenPriceLoader {
     private func getTokenList() throws -> [Token] {
         if TokenPriceLoader.tokens.count == 0 {
             TokenPriceLoader.tokens = (try? Promise<[Token]>.init { (resolver) in
-                Alamofire.request(URL(string: "https://api.coinmarketcap.com/v2/listings/")!).response(queue: DispatchQueue.global()) { (response) in
+                AF.request(URL(string: "https://api.coinmarketcap.com/v2/listings/")!).response(queue: DispatchQueue.global()) { (response) in
                     do {
                         guard let data = response.data else { throw response.error! }
                         let response = try JSONDecoder().decode(TokenListResponse.self, from: data)

@@ -73,7 +73,7 @@ class AddAssetController: UIViewController, UITableViewDelegate, UITableViewData
                 tokenModel = realm.object(ofType: TokenModel.self, forPrimaryKey: tokenIdentifier)!
             } else {
                 try realm.write {
-                    realm.add(tokenModel, update: true)
+                    realm.add(tokenModel, update: .modified)
                 }
             }
 
@@ -83,7 +83,7 @@ class AddAssetController: UIViewController, UITableViewDelegate, UITableViewData
                     wallet.selectedTokenList.append(tokenModel)
 
                     if chainModel != nil {
-                        realm.add(chainModel!, update: true)
+                        realm.add(chainModel!, update: .modified)
                         if !wallet.chainModelList.contains(where: { $0 == chainModel }) {
                             wallet.chainModelList.append(chainModel!)
                         }

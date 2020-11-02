@@ -29,7 +29,7 @@ class EthereumTokenProfileLoader {
                 resolver.fulfill(("", "TokenProfile.Ether.overview".localized()))
                 return
             }
-            Alamofire.request("https://raw.githubusercontent.com/consenlabs/token-profile/master/erc20/\(address).json").responseData { (response) in
+        AF.request("https://raw.githubusercontent.com/consenlabs/token-profile/master/erc20/\(address).json").responseData(completionHandler: { (response) in
                 do {
                     guard let data = response.data else { throw response.error! }
                     let profile = try JSONDecoder().decode(TokenProfile.self, from: data)
@@ -41,7 +41,7 @@ class EthereumTokenProfileLoader {
                 } catch {
                     resolver.reject(error)
                 }
-            }
+            })
         }.wait()
     }
 }

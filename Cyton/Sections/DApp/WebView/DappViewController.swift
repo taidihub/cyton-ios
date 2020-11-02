@@ -70,16 +70,27 @@ class DappViewController: UIViewController, WKUIDelegate, ErrorOverlayPresentabl
     }
 
     func monitorNetwork() {
-        netState?.listener = { state in
-            switch state {
-            case .unknown, .notReachable:
-                break
-            case .reachable:
-                self.removeOverlay()
-                self.loadRequest()
-                self.netState?.stopListening()
-            }
+       switch netState?.status {
+        case .unknown, .notReachable:
+            break
+        case .reachable:
+            self.removeOverlay()
+            self.loadRequest()
+            self.netState?.stopListening()
+       case .none:
+        break
         }
+                    
+//        netState?.listener = { state in
+//            switch state {
+//            case .unknown, .notReachable:
+//                break
+//            case .reachable:
+//                self.removeOverlay()
+//                self.loadRequest()
+//                self.netState?.stopListening()
+//            }
+//        }
     }
 }
 
@@ -126,7 +137,8 @@ extension DappViewController: WKNavigationDelegate {
         let error = error as NSError
         errorOverlaycontroller.style = .networkFail
         if error.code == -1009 {
-            netState?.startListening()
+            netState?.startListening(onUpdatePerforming: { (status) in
+            })
             errorOverlaycontroller.messageLabel.text = "Common.Connection.LoseConnect".localized()
         } else {
             errorOverlaycontroller.messageLabel.text = "Common.Connection.LoadFaild".localized()
