@@ -15,6 +15,7 @@
 "Common.Connection.Refresh" = "Refresh";
 "Common.DataEmpty" = "Empty Data";
 "Common.NetworkError" = "Network error, please try again later";
+"Common.inDevelopment" = "In development";
 "Common.next" = "Continue";
 "Common.confirm" = "Confirm";
 "Common.cancel" = "Cancel";

@@ -23,6 +23,9 @@ class DappViewController: UIViewController, WKUIDelegate, ErrorOverlayPresentabl
         self.title = "DApp.Home".localized()
         self.navigationItem.title = "ÐApp"
 
+        self.navigationItem.rightBarButtonItem?.image = nil
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
+
         addWebView()
         layoutWebView()
 
@@ -143,6 +146,10 @@ extension DappViewController: WKNavigationDelegate {
         } else {
             errorOverlaycontroller.messageLabel.text = "Common.Connection.LoadFaild".localized()
         }
+        
+        /// In development
+        errorOverlaycontroller.style = .inDevelopment
+
         showOverlay()
     }
 

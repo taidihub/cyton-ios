@@ -15,6 +15,7 @@
 "Common.Connection.Refresh" = "刷新";
 "Common.DataEmpty" = "空空如也";
 "Common.NetworkError" = "网络错误，请稍后再试";
+"Common.inDevelopment" = "正在开发中，敬请期待";
 "Common.next" = "下一步";
 "Common.confirm" = "确定";
 "Common.cancel" = "取消";
@@ -130,7 +131,7 @@
 
 // Wallet QRCode
 // ---------------------------------------------------------
-"Wallet.QRCode.desc" = "此地址只接受BST，发送其他币种到此地址将不可找回";
+"Wallet.QRCode.desc" = "此地址只接受BST，发送其他资产到此地址将不可找回";
 "Wallet.QRCode.copy" = "复制";
 "Wallet.QRCode.copySuccess" = "地址已经复制到粘贴板";
 
@@ -166,7 +167,7 @@
 "Transaction.Send.balanceNotSufficient" = "请确保账户剩余%@高于矿工费用，以便顺利完成转账～";
 "Transaction.Send.addressError" = "您的地址错误，请重新输入";
 "Transaction.Send.title" = "%@转账";
-"Transaction.Send.transactionAvailableBalance" = "您输入的金额超过您的余额，是否全部转出？";
+"Transaction.Send.transactionAvailableBalance" = "您输入的数量超过您的余额，是否全部转出？";
 "Transaction.Send.gasPriceSettingIsTooLow" = "您的GasPrice设置过低，建议输入推荐值以快速转账";
 "Transaction.Send.gasLimitSettingIsTooLow" = "您输入的Gas Limit过低，请输入合理的数值";
 "Transaction.Send.quotaLimitSettingIsTooLow" = "您输入的Quota Limit过低，请输入合理的数值";
@@ -178,8 +179,8 @@
 "Transaction.Send.input" = "请输入";
 "Transaction.Send.inputHexData" = "请输入十六进制数据";
 "Transaction.Send.txToken" = "转账币种";
-"Transaction.Send.txAmount" = "转账金额";
-"Transaction.Send.inputAmount" = "输入金额";
+"Transaction.Send.txAmount" = "转账数量";
+"Transaction.Send.inputAmount" = "输入数量";
 "Transaction.Send.receiptAddress" = "收款地址";
 "Transaction.Send.gasFee" = "矿工费用";
 "Transaction.Send.txInfo" = "转账信息";

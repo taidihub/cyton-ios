@@ -45,6 +45,7 @@ class ErrorOverlayViewController: UIViewController {
     enum Style {
         case blank
         case networkFail
+        case inDevelopment
     }
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var messageLabel: UILabel!
@@ -57,6 +58,10 @@ class ErrorOverlayViewController: UIViewController {
                 imageView.image = UIImage(named: "fail_icon")
                 messageLabel.text = "Common.NetworkError".localized()
                 refreshButton.isHidden = false
+            } else if style == .inDevelopment{
+                imageView.image = UIImage(named: "blank_icon")
+                messageLabel.text = "Common.inDevelopment".localized()
+                refreshButton.isHidden = true
             } else {
                 imageView.image = UIImage(named: "blank_icon")
                 messageLabel.text = "Common.DataEmpty".localized()
