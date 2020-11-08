@@ -106,10 +106,11 @@ extension WalletViewController: WalletPresenterDelegate {
 
     func walletPresenter(presenter: WalletPresenter, didRefreshCurrency currency: LocalCurrency) {
         if Locale.current.languageCode?.contains("zh") ?? false {
-            currencyLabel.text = "Wallet.totalAmount".localized() + "(\(currency.name))"
+            currencyLabel.text = "Wallet.totalAmount".localized()// + "(\(currency.name))"
         } else {
-            currencyLabel.text = "Wallet.totalAmount".localized() + "(\(currency.short))"
+            currencyLabel.text = "Wallet.totalAmount".localized()// + "(\(currency.short))"
         }
+        
     }
 
     func walletPresenter(presenter: WalletPresenter, didSwitchWallet wallet: WalletModel) {
@@ -132,6 +133,11 @@ extension WalletViewController: WalletPresenterDelegate {
         } else {
             totalAmountLabel.text = "≈\(presenter.currency.symbol)" + amount.currencyFormat()
         }
+        
+        if let bstToken = presenter.bstToken{
+            totalAmountLabel.text = bstToken.balance?.toAmountText(bstToken.decimals)
+        }
+
     }
 
     func walletPresenterBeganRefresh(presenter: WalletPresenter) {
@@ -152,7 +158,8 @@ extension WalletViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let token = presenter.tokens[indexPath.row]
+
+        let token = presenter.tokens.reversed()[indexPath.row]
         let cell: TokenTableViewCell
         if token.balance == nil {
             if presenter.refreshing {
@@ -165,7 +172,7 @@ extension WalletViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: "TokenTableViewCell") as! TokenTableViewCell
         }
-        cell.token = presenter.tokens[indexPath.row]
+        cell.token = token//presenter.tokens.reversed()[indexPath.row]
         return cell
     }
 

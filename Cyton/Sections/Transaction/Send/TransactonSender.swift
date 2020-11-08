@@ -83,7 +83,7 @@ extension TransactonSender {
                 contract: paramBuilder.contractAddress,
                 value: paramBuilder.value,
                 quota: paramBuilder.gasLimit,
-                chainId: BigUInt(paramBuilder.chainId)!,
+                chainId: paramBuilder.chainId,
                 password: password)
             recordCITATx(txhash: result.0, validUntilBlock: result.1)
             return result.0

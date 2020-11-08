@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="se2-Kc-J4x">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="se2-Kc-J4x">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -134,7 +134,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFT-j7-CsS" customClass="DesignableGradientView" customModule="Cyton" customModuleProvider="target">
                                                     <rect key="frame" x="55" y="98" width="120" height="40"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QU2-9I-06f" customClass="DesignableButton" customModule="Cyton" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QU2-9I-06f" customClass="DesignableButton" customModule="Cyton" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="120" id="4F5-d1-Lsi"/>
@@ -190,7 +190,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omU-t3-B9C" customClass="DesignableGradientView" customModule="Cyton" customModuleProvider="target">
                                                     <rect key="frame" x="200" y="98" width="120" height="40"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Xn-vX-xxw" customClass="DesignableButton" customModule="Cyton" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Xn-vX-xxw" customClass="DesignableButton" customModule="Cyton" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="120" id="aMt-BK-sBl"/>
@@ -253,7 +253,7 @@
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                    <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <color key="value" systemColor="groupTableViewBackgroundColor"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                     <real key="value" value="0.29999999999999999"/>
@@ -353,7 +353,7 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                            <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                            <color key="value" systemColor="groupTableViewBackgroundColor"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                             <real key="value" value="0.29999999999999999"/>
@@ -452,7 +452,7 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                            <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                            <color key="value" systemColor="groupTableViewBackgroundColor"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                             <real key="value" value="0.29999999999999999"/>
@@ -549,7 +549,7 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                            <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                            <color key="value" systemColor="groupTableViewBackgroundColor"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                             <real key="value" value="0.29999999999999999"/>
@@ -645,7 +645,7 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                            <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                            <color key="value" systemColor="groupTableViewBackgroundColor"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
                                                             <real key="value" value="0.29999999999999999"/>
@@ -681,6 +681,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Cn5-oL-tkx"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Cn5-oL-tkx" firstAttribute="trailing" secondItem="H6S-k1-sPQ" secondAttribute="trailing" id="6VQ-7Q-BOK"/>
@@ -688,7 +689,6 @@
                             <constraint firstItem="H6S-k1-sPQ" firstAttribute="leading" secondItem="Cn5-oL-tkx" secondAttribute="leading" id="pys-M7-fuA"/>
                             <constraint firstItem="Cn5-oL-tkx" firstAttribute="bottom" secondItem="H6S-k1-sPQ" secondAttribute="bottom" id="qxF-ZD-UZT"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Cn5-oL-tkx"/>
                     </view>
                     <connections>
                         <outlet property="addTokenButton" destination="h13-sD-Sm0" id="bN1-by-9Tj"/>
@@ -749,7 +749,7 @@
                             <color key="textColor" red="0.1803921568627451" green="0.19215686274509802" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h13-sD-Sm0">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h13-sD-Sm0">
                             <rect key="frame" x="296" y="12" width="64" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="64" id="b97-OB-xR1"/>
@@ -766,6 +766,7 @@
                             </connections>
                         </button>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="ehw-Lk-Bz8"/>
                     <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="h13-sD-Sm0" firstAttribute="centerY" secondItem="lHJ-34-u6v" secondAttribute="centerY" id="2Ic-2I-bsm"/>
@@ -775,7 +776,6 @@
                         <constraint firstItem="ehw-Lk-Bz8" firstAttribute="trailing" secondItem="h13-sD-Sm0" secondAttribute="trailing" constant="15" id="eQF-Jx-yF5"/>
                         <constraint firstItem="WDt-Rp-fHX" firstAttribute="leading" secondItem="ehw-Lk-Bz8" secondAttribute="leading" constant="20" id="zDi-t7-a7i"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="ehw-Lk-Bz8"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="1273" y="-489"/>
@@ -882,7 +882,7 @@
                                                 <color key="textColor" red="0.56862745098039214" green="0.58823529411764708" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hj4-9b-ulb">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hj4-9b-ulb">
                                                 <rect key="frame" x="242" y="15" width="44" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="FnX-aY-XeV"/>
@@ -950,13 +950,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6AJ-1k-51B"/>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pkq-1Q-CnU" firstAttribute="leading" secondItem="6AJ-1k-51B" secondAttribute="leading" constant="15" id="GW0-VR-kkb"/>
                             <constraint firstItem="6AJ-1k-51B" firstAttribute="trailing" secondItem="pkq-1Q-CnU" secondAttribute="trailing" constant="15" id="cPb-3l-glY"/>
                             <constraint firstItem="pkq-1Q-CnU" firstAttribute="top" secondItem="6AJ-1k-51B" secondAttribute="top" constant="20" id="pfz-rn-OlJ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6AJ-1k-51B"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="faA-hN-qcP">
@@ -981,6 +981,14 @@
             <point key="canvasLocation" x="1273" y="265"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="7Xn-vX-xxw">
+            <size key="intrinsicContentSize" width="53" height="22"/>
+        </designable>
+        <designable name="QU2-9I-06f">
+            <size key="intrinsicContentSize" width="50" height="19"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="A0N-Ka-jF1"/>
     </inferredMetricsTieBreakers>
@@ -995,5 +1003,20 @@
         <namedColor name="headline_color">
             <color red="0.18000000715255737" green="0.19200000166893005" blue="0.24300000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

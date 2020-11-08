@@ -125,8 +125,8 @@
 "Wallet.addToken" = "Add";
 "Wallet.transaction" = "Send";
 "Wallet.receipt" = "Receive";
-"Wallet.totalAmount" = "Total Assets";
-"Wallet.noAmount" = "No Assets";
+"Wallet.totalAmount" = "Total BST";
+"Wallet.noAmount" = "~";
 "Wallet.addWallet" = "Import Wallet";
 
 // Wallet QRCode

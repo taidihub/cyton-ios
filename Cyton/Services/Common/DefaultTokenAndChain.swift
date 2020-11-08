@@ -17,8 +17,9 @@ class DefaultTokenAndChain {
             guard let walletModel = realm.resolve(walletRef) else {
                 return
             }
-            self.ethereum(wallet: walletModel)
-            self.testChain(chainHost: CITANetwork.defaultNode, wallet: walletModel)
+//            self.bingShengToken(wallet: walletModel)
+//            self.ethereum(wallet: walletModel)
+//            self.testChain(chainHost: CITANetwork.defaultNode, wallet: walletModel)
             self.testChain(chainHost: "https://testnet.taidihub.com", wallet: walletModel)
         }
     }
@@ -42,6 +43,31 @@ class DefaultTokenAndChain {
                 wallet.tokenModelList.append(ethModel)
                 if !wallet.selectedTokenList.contains(where: { $0 == ethModel }) {
                     wallet.selectedTokenList.append(ethModel)
+                }
+            }
+        }
+    }
+    
+    func bingShengToken(wallet: WalletModel) {
+        let bstModel = TokenModel()
+        bstModel.address = "0x45740ec42b105aa4cf512ee3a5dcef6af5a9f517"
+        bstModel.decimals = NativeDecimals.nativeTokenDecimals
+        bstModel.iconUrl = ""
+        bstModel.isNativeToken = true
+        bstModel.name = "BST"
+        bstModel.symbol = "BST"
+        bstModel.isNativeToken = true
+        if let id = TokenModel.identifier(for: bstModel) {
+            bstModel.identifier = id
+        }
+        
+        let realm = try! Realm()
+        try? realm.write {
+            realm.add(bstModel, update: .modified)
+            if !wallet.tokenModelList.contains(where: { $0 == bstModel }) {
+                wallet.tokenModelList.append(bstModel)
+                if !wallet.selectedTokenList.contains(where: { $0 == bstModel }) {
+                    wallet.selectedTokenList.append(bstModel)
                 }
             }
         }
@@ -84,9 +110,48 @@ class DefaultTokenAndChain {
                     }
                 }
             }
+            
+            self.addBingShengToken(chainModel: chainModel)
+            
         } catch {
         }
 
+    }
+    
+    func addBingShengToken(chainModel : ChainModel){
+        let contractAddress = "0x18e1334b5D70024533419b8bbDaa31518D8Fd783"
+        
+        let chainId = "0x1"
+        let chainName = "taidi-chain"
+        let httpProvider = "https://testnet.taidihub.com"
+        let chain = Chain(chainId: chainId, chainName: chainName, httpProvider: httpProvider)
+
+        if let tokenModel = AddCITAToken.erc20Token(chain: chain, contractAddress: contractAddress) {
+            do {
+                let realm = try Realm()
+                let wallet = AppModel.current.currentWallet!
+                var tokenModel = tokenModel
+                if let tokenIdentifier = TokenModel.identifier(for: tokenModel) {
+                    tokenModel = realm.object(ofType: TokenModel.self, forPrimaryKey: tokenIdentifier)!
+                } else {
+                    try realm.write {
+                        realm.add(tokenModel, update: .modified)
+                    }
+                }
+                
+                if !wallet.tokenModelList.contains(where: { $0 == tokenModel }) {
+                    try realm.write {
+                        
+                        realm.add(chainModel, update: .modified)
+
+                        wallet.tokenModelList.append(tokenModel)
+                        wallet.selectedTokenList.append(tokenModel)
+                        wallet.chainModelList.append(chainModel)
+                        
+                    }
+                } else {  }
+            } catch {  }
+        }
     }
 
 }

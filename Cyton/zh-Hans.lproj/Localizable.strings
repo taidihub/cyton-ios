@@ -125,8 +125,8 @@
 "Wallet.addToken" = "添加资产";
 "Wallet.transaction" = "转账";
 "Wallet.receipt" = "收款";
-"Wallet.totalAmount" = "总资产";
-"Wallet.noAmount" = "暂无资产";
+"Wallet.totalAmount" = "总BST";
+"Wallet.noAmount" = "~";
 "Wallet.addWallet" = "添加钱包";
 
 // Wallet QRCode

@@ -67,7 +67,7 @@ class CITATxSender {
         contract: String,
         value: BigUInt,
         quota: BigUInt = GasCalculator.defaultGasLimit,
-        chainId: BigUInt,
+        chainId: String,
         password: String
         ) throws -> (TxHash, BlockNumber) {
         let destinationEthAddress = Address(contract.addHexPrefix())
