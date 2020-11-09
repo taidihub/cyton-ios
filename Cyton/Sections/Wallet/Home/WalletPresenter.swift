@@ -39,6 +39,15 @@ class WalletPresenter {
             delegate?.walletPresenter(presenter: self, didRefreshToken: tokens)
         }
     }
+    
+    var bstToken : Token?{
+        get{
+            return tokens.first {
+                $0.symbol == "BST"
+            }
+        }
+    }
+    
     private(set) var refreshing = false
     weak var delegate: WalletPresenterDelegate?
 
