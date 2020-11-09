@@ -186,7 +186,7 @@ extension WalletViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "transactionHistory", sender: presenter.tokens[indexPath.row])
+        performSegue(withIdentifier: "transactionHistory", sender: presenter.tokens.reversed()[indexPath.row])
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
