@@ -841,11 +841,11 @@
             <objects>
                 <viewController storyboardIdentifier="WalletQRCodeViewController" title="收款" id="xNb-kk-FtN" customClass="WalletQRCodeViewController" customModule="Cyton" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Ox-Cr-A8g">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pkq-1Q-CnU">
-                                <rect key="frame" x="15" y="20" width="345" height="480"/>
+                                <rect key="frame" x="15" y="64" width="345" height="480"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zDQ-Iw-I8R">
                                         <rect key="frame" x="147.5" y="30" width="50" height="50"/>
@@ -990,7 +990,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="A0N-Ka-jF1"/>
+        <segue reference="XeA-2f-AYU"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_refresh" width="18" height="16"/>

@@ -72,6 +72,9 @@ class WalletViewController: UIViewController {
         } else if segue.identifier == "transaction" {
             let controller = segue.destination as! SendTransactionViewController
             controller.enableSwitchToken = true
+            if let transferToken = presenter.bstToken{
+                controller.token = transferToken
+            }
         }
     }
 

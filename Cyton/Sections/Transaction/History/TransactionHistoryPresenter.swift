@@ -121,7 +121,7 @@ class TransactionHistoryPresenter: NSObject {
     private func loadData() throws -> [TransactionDetails] {
         switch token.type {
         case .cita:
-            if token.symbol == "CTT" {
+            if token.symbol == "TDT" {
                 return try CITANetwork().getTransactionHistory(walletAddress: token.walletAddress, page: page, pageSize: pageSize)
             } else {
                 return []

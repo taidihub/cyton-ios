@@ -178,7 +178,7 @@
 "Transaction.Send.gasCostSettingDesc" = "The data will be uploaded to the blockchain and your data security will be guaranteed";
 "Transaction.Send.input" = "Please Enter";
 "Transaction.Send.inputHexData" = "Hexadecimal Data";
-"Transaction.Send.txToken" = "Transfer Token";
+"Transaction.Send.txToken" = "Transfer Amount";
 "Transaction.Send.txAmount" = "Amount To Send";
 "Transaction.Send.inputAmount" = "Input Amount";
 "Transaction.Send.receiptAddress" = "To";

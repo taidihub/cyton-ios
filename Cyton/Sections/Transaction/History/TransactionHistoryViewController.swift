@@ -43,7 +43,7 @@ class TransactionHistoryViewController: UIViewController, UITableViewDelegate, U
         setupTokenProfile(tokenIcon: nil, overview: nil, price: nil)
         tokenProfleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickTokenProfile)))
         if token.symbol == "MBA" ||
-            token.symbol == "CTT" {
+            token.symbol == "TDT" {
             warningView.isHidden = false
             warningHeight.constant = 30.0
         } else {
@@ -134,7 +134,7 @@ class TransactionHistoryViewController: UIViewController, UITableViewDelegate, U
             }
             return formatOverview
         }()
-        tokenIconView.sd_setImage(with: URL(string: tokenIcon), placeholderImage: UIImage(named: "eth_logo"))
+        tokenIconView.sd_setImage(with: URL(string: tokenIcon), placeholderImage: UIImage(named: "logo_round"))
         if let price = price {
             tokenAmountLabel.text = NSDecimalNumber(value: price).currencyFormat()
         } else {

@@ -90,7 +90,7 @@ class TransactionDetailsViewController: UITableViewController {
 
     func setupUI() {
         setupTxStatus()
-        tokenIconView.sd_setImage(with: URL(string: paramBuilder.tokenIcon), placeholderImage: UIImage(named: "eth_logo"))
+        tokenIconView.sd_setImage(with: URL(string: paramBuilder.tokenIcon), placeholderImage: UIImage(named: "logo_round"))
         amountLabel.text = paramBuilder.amount
         dateLabel.text = paramBuilder.date
         paymentAddressLabel.text = paramBuilder.from
