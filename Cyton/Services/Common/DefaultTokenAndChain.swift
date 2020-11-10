@@ -78,7 +78,11 @@ class DefaultTokenAndChain {
             let metaData = try CITANetwork(url: URL(string: chainHost)).cita.rpc.getMetaData()
             let tokenModel = TokenModel()
             tokenModel.symbol = metaData.tokenSymbol
-            tokenModel.iconUrl = metaData.tokenAvatar
+            if metaData.tokenSymbol == "TDT"{
+                tokenModel.iconUrl = "https://oss01.taidihub.com/img/logo_taidi.png"
+            }else{
+                tokenModel.iconUrl = metaData.tokenAvatar
+            }
             tokenModel.name = metaData.tokenName
             tokenModel.isNativeToken = true
             if let tokenIdentifier = TokenModel.identifier(for: tokenModel) {
