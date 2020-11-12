@@ -105,7 +105,21 @@ extension CITANetwork {
         return try Promise<[CITATransactionDetails]>.init { (resolver) in
             AF.request(url, method: .get, parameters: parameters).responseJSON { (response) in
                 do {
-                    guard let responseData = response.data else { throw TransactionHistoryError.networkFailure }
+                    guard var responseData = response.data else { throw TransactionHistoryError.networkFailure }
+                
+                    let responseJ = try JSONSerialization.jsonObject(with: responseData, options: .allowFragments)
+                    if var responseDict = responseJ as? [String: Any],var result = responseDict["result"] as? [String:Any],var transfers = result["transfers"] as? [[String:Any]]{
+                        for i in 0..<transfers.count{
+                            if let valueNumber = transfers[i]["value"] as? NSNumber{
+                                transfers[i].removeValue(forKey: "value")
+                                transfers[i]["value"] = valueNumber.stringValue
+                            }
+                        }
+                        result["transfers"] = transfers
+                        responseDict["result"] = result
+                        let newResponseData = try JSONSerialization.data(withJSONObject: responseDict, options: .fragmentsAllowed)
+                        responseData = newResponseData
+                    }
                     let response = try JSONDecoder().decode(CITAErc20TransactionsResponse.self, from: responseData)
                     let transactions = response.result.transfers
                     resolver.fulfill(transactions)
